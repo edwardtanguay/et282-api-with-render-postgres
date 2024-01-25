@@ -1,6 +1,7 @@
 import prisma from './db.js';
 import express from 'express';
 import { addSkill } from './handlers.js';
+import { INewSkill, ISkill } from './interfaces.js';
 
 const app = express();
 app.use(express.json());
@@ -21,9 +22,9 @@ app.get('/skills', async (req, res) => {
 });
 
 app.post('/skills', async (req, res) => {
-	const _skill = req.body;
+	const _skill: INewSkill = req.body;
 	try {
-		const skill = await addSkill(_skill);
+		const skill: ISkill | null = await addSkill(_skill);
 		if (skill !== null) {
 			res.status(201).json(skill);
 		} else {

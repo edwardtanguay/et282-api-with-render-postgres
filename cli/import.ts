@@ -11,7 +11,11 @@ for (const _skill of _skills) {
 			console.log(`TEST IMPORT OF SKILL "${_skill.name}"`);
 		} else {
 			const skill = await addSkill(_skill);
-			console.log(`imported skill "${skill.name}"`);
+			if (skill !== null) {
+				console.log(`imported skill "${skill.name}"`);
+			} else {
+				console.log(`imported skill is null`);
+			}
 		}
 	}
 	catch (e) {
