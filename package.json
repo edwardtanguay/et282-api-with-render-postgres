@@ -9,16 +9,17 @@
   },
   "nodemonConfig": {
     "watch": [
-        "src"
+      "src"
     ],
     "ext": "js",
     "exec": "node src/server.js"
-},
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2",
-    "nodemon": "^3.0.3"
+    "nodemon": "^3.0.3",
+    "prisma": "^5.8.1"
   }
 }
