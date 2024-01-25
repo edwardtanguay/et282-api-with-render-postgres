@@ -21,7 +21,13 @@ app.get('/skills', async (req, res) => {
 
 app.post('/skills', async (req, res) => {
 	const _skill = req.body;
-	res.json(_skill);
+	try {
+		const skill = await prisma.skill.create({ data: _skill });
+		res.status(201).json(skill);
+	} 
+	catch (e) {
+		res.status(400).json({message: "an error occurred"})
+	}
 })
 
 
