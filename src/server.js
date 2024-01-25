@@ -1,5 +1,6 @@
 import prisma from './db.js';
 import express from 'express';
+import { addSkill } from './handlers.js';
 
 const app = express();
 app.use(express.json());
@@ -22,13 +23,17 @@ app.get('/skills', async (req, res) => {
 app.post('/skills', async (req, res) => {
 	const _skill = req.body;
 	try {
-		const skill = await prisma.skill.create({ data: _skill });
-		res.status(201).json(skill);
-	} 
-	catch (e) {
-		res.status(400).json({message: "an error occurred"})
+		const skill = await addSkill(_skill);
+		if (skill !== null) {
+			res.status(201).json(skill);
+		} else {
+			res.status(400).json({ message: "an error occurred" });
+		}
 	}
-})
+	catch (e) {
+		res.status(400).json({ message: "an error occurred" });
+	}
+});
 
 
 app.listen(port, () => {
