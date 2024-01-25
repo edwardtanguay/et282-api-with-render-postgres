@@ -10,12 +10,11 @@ datasource db {
 	url      = env("DATABASE_URL")
 }
 
-
 model Skill {
-	id					String		@id @default(uuid())
+	id				String		@id @default(uuid())
 	createdAt		DateTime	@default(now())
 	idCode			String		@unique
-	name				String
-	url					String
-	description	String
+	name			String
+	url				String
+	description		String
 }
