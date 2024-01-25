@@ -1,26 +1,27 @@
 {
-  "name": "et282-api-with-render-postgres",
-  "version": "1.0.0",
-  "description": "",
-  "type": "module",
-  "main": "index.js",
-  "scripts": {
-    "dev": "nodemon"
-  },
-  "nodemonConfig": {
-    "watch": [
-      "src"
-    ],
-    "ext": "js",
-    "exec": "node src/server.js"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "@prisma/client": "^5.8.1",
-    "express": "^4.18.2",
-    "nodemon": "^3.0.3",
-    "prisma": "^5.8.1"
-  }
+	"name": "et282-api-with-render-postgres",
+	"version": "1.0.0",
+	"description": "",
+	"type": "module",
+	"main": "index.js",
+	"scripts": {
+		"dev": "nodemon",
+		"import" : "node cli/import.js"
+	},
+	"nodemonConfig": {
+		"watch": [
+			"src"
+		],
+		"ext": "js",
+		"exec": "node src/server.js"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"@prisma/client": "^5.8.1",
+		"express": "^4.18.2",
+		"nodemon": "^3.0.3",
+		"prisma": "^5.8.1"
+	}
 }
