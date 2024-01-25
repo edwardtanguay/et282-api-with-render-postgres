@@ -1,11 +1,9 @@
 import { addSkill } from "../src/handlers.js";
+import * as tools from './tools.js';
 
-const _skill = {
-	"idCode": "777",
-	"name": "nnn",
-	"url": "uuu",
-	"description": "ddd"
-};
+const _skills = tools.readJsonFile('cli/data/skills.json');
+console.log(_skills);
 
-const skill = await addSkill(_skill);
-console.log('added', skill);
+
+// const skill = await addSkill(_skill);
+// console.log('added', skill);
